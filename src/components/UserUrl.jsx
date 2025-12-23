@@ -81,14 +81,20 @@ const UserUrl = () => {
                 </td>
                 <td className="px-6 py-4">
                   <div className="text-sm">
-                    <a 
-                      href={`${SHORT_URL_BASE}/${url.short_url}`} 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="text-blue-600 hover:text-blue-900 hover:underline"
-                    >
-                      {`${SHORT_URL_BASE.replace(/^https?:\/\//, '')}/${url.short_url}`}
-                    </a>
+                    {/* Prefer server-provided full URL when available */}
+                    {(() => {
+                      const full = url.shortFullUrl || `${SHORT_URL_BASE}/${url.short_url}`
+                      return (
+                        <a
+                          href={full}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-blue-600 hover:text-blue-900 hover:underline"
+                        >
+                          {full.replace(/^https?:\/\//, '')}
+                        </a>
+                      )
+                    })()}
                   </div>
                 </td>
                 <td className="px-6 py-4">
@@ -100,7 +106,7 @@ const UserUrl = () => {
                 </td>
                 <td className="px-6 py-4 text-sm font-medium">
                   <button
-                    onClick={() => handleCopy(`${SHORT_URL_BASE}/${url.short_url}`, url._id)}
+                    onClick={() => handleCopy(url.shortFullUrl || `${SHORT_URL_BASE}/${url.short_url}`, url._id)}
                     className={`inline-flex items-center px-3 py-1.5 border border-transparent text-xs font-medium rounded-md shadow-sm ${
                       copiedId === url._id
                         ? 'bg-green-600 text-white hover:bg-green-700'
