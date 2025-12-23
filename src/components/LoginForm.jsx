@@ -22,7 +22,7 @@ const LoginForm = ({ state }) => {
             dispatch(login(data.user))
             navigate({to:"/dashboard"})
             setLoading(false);
-            console.log("signin(Login) successful")
+            console.log("signin (Login) successfully done")
             // console.log("login input:", email, password)
 
         } catch (err) {

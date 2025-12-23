@@ -5,19 +5,25 @@ import { login } from "../store/slice/authSlice";
 export const checkAuth = async ({ context }) => {
     try {
         const { queryClient, store } = context;
-        const user = await queryClient.ensureQueryData({
+        // If already logged in in redux, allow immediately
+        const { isAuthenticated } = store.getState().auth;
+        if (isAuthenticated) return true;
+
+        // Otherwise request current user from the server
+        const data = await queryClient.ensureQueryData({
             queryKey: ["currentUser"],
             queryFn: getCurrentUser,
         });
-        if(!user) return false;
+
+        const user = data?.user;
+        if (!user) return false;
+
+        // Dispatch the actual user object (not the wrapper {user: ...})
         store.dispatch(login(user));
-        const {isAuthenticated} = store.getState().auth;
-        if(!isAuthenticated) return false;
-        return true
+
+        return true;
     } catch (error) {
-        console.log(error)
-        return redirect({to: "/auth",})
-        
-       
+        console.log(error);
+        return redirect({ to: "/auth" });
     }
 };

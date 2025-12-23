@@ -6,7 +6,7 @@ import { queryClient } from '../main'
 
 const UrlForm = () => {
   
-  const [url, setUrl] = useState("https://www.google.com")
+  const [url, setUrl] = useState("")
   const [shortUrl, setShortUrl] = useState()
   const [copied, setCopied] = useState(false)
   const [error, setError] = useState(null)
@@ -71,14 +71,14 @@ const UrlForm = () => {
               id="customSlug"
               value={customSlug}
               onChange={(event) => setCustomSlug(event.target.value)}
-              placeholder="Enter custom slug"
+              placeholder="Enter your custom url  slug"
               className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
           </div>
         )}
         {shortUrl && (
           <div className="mt-6">
-            <h2 className="text-lg font-semibold mb-2">Your shortend URL:</h2>
+            <h2 className="text-lg font-semibold mb-2">Your shorten URL:</h2>
             <div className="flex items-center">
               <input
                 type="text"

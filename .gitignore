@@ -10,7 +10,7 @@ lerna-debug.log*
 # Set all text files to use LF in repo
 * text=auto eol=lf
 
-# Keep node_modules untouched
+# Keep node_modules .env file untouched
 node_modules
 .env
 dist
