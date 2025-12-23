@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import { useQuery } from '@tanstack/react-query'
 import { getAllUserUrls } from '../api/user.api'
 
+const SHORT_URL_BASE = import.meta.env.VITE_SHORT_URL_BASE || 'http://localhost:3000'
+
 const UserUrl = () => {
   const { data: urls, isLoading, isError, error } = useQuery({
     queryKey: ['userUrls'],
@@ -36,7 +38,7 @@ const UserUrl = () => {
     )
   }
 
-  if (!urls.urls || urls.urls.length === 0) {
+  if (!urls || !urls.urls || urls.urls.length === 0) {
     return (
       <div className="text-center text-gray-500 my-6 p-4 bg-gray-50 rounded-lg border border-gray-200">
         <svg className="w-12 h-12 mx-auto text-gray-400 mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -70,7 +72,7 @@ const UserUrl = () => {
             </tr>
           </thead>
           <tbody className="bg-white divide-y divide-gray-200">
-            {urls.urls.reverse().map((url) => (
+            {urls?.urls?.reverse().map((url) => (
               <tr key={url._id} className="hover:bg-gray-50">
                 <td className="px-6 py-4">
                   <div className="text-sm text-gray-900 truncate max-w-xs">
@@ -80,12 +82,12 @@ const UserUrl = () => {
                 <td className="px-6 py-4">
                   <div className="text-sm">
                     <a 
-                      href={`http://localhost:3000/${url.short_url}`} 
+                      href={`${SHORT_URL_BASE}/${url.short_url}`} 
                       target="_blank" 
                       rel="noopener noreferrer"
                       className="text-blue-600 hover:text-blue-900 hover:underline"
                     >
-                      {`localhost:3000/${url.short_url}`}
+                      {`${SHORT_URL_BASE.replace(/^https?:\/\//, '')}/${url.short_url}`}
                     </a>
                   </div>
                 </td>
@@ -98,7 +100,7 @@ const UserUrl = () => {
                 </td>
                 <td className="px-6 py-4 text-sm font-medium">
                   <button
-                    onClick={() => handleCopy(`http://localhost:3000/${url.short_url}`, url._id)}
+                    onClick={() => handleCopy(`${SHORT_URL_BASE}/${url.short_url}`, url._id)}
                     className={`inline-flex items-center px-3 py-1.5 border border-transparent text-xs font-medium rounded-md shadow-sm ${
                       copiedId === url._id
                         ? 'bg-green-600 text-white hover:bg-green-700'
