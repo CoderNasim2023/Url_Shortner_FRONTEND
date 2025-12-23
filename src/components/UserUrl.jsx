@@ -2,8 +2,7 @@ import React, { useState } from 'react'
 import { useQuery } from '@tanstack/react-query'
 import { getAllUserUrls } from '../api/user.api'
 
-const SHORT_URL_BASE =
-  import.meta.env.APP_URL || "https://url-shortner-backend-qoag.onrender.com";
+const SHORT_URL_BASE = import.meta.env.VITE_SHORT_URL_BASE || "https://url-shortner-backend-qoag.onrender.com";
 
 const UserUrl = () => {
   const { data: urls, isLoading, isError, error } = useQuery({
