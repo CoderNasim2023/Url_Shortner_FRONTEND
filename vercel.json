@@ -1,0 +1,20 @@
+{
+  "rewrites": [
+    {
+      "source": "/auth(.*)",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/dashboard(.*)",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/:id",
+      "destination": "https://url-shortner-backend-qoag.onrender.com/:id"
+    }
+  ]
+}
