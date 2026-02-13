@@ -122,8 +122,8 @@ const RegisterForm = ({ state }) => {
             Already have an account? <span onClick={() => state(true)} className="text-blue-500 hover:text-blue-700">Sign In</span>
           </p>
         </div>
+      </form>
     </div>
-    </div >
   );
 };
 
