@@ -24,7 +24,7 @@ const Navbar = () => {
           {/* Left side - Project Title Name */}
           <div className="flex items-center">
             <Link to="/" className="text-xl font-bold text-gray-800">
-              MERN URL Shortener
+              Urlify
             </Link>
           </div>
 
