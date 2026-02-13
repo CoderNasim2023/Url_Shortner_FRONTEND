@@ -13,7 +13,8 @@ const LoginForm = ({ state }) => {
     const dispatch = useDispatch()
     const auth = useSelector((state) => state.auth)
 
-    const handleSubmit = async () => {
+    const handleSubmit = async (e) => {
+        if (e) e.preventDefault();
         setLoading(true);
         setError('');
 
