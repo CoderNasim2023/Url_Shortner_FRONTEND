@@ -3,20 +3,24 @@
   "trailingSlash": false,
   "rewrites": [
     {
-      "source": "/api/(.*)",
-      "destination": "https://url-shortner-backend-qoag.onrender.com/api/$1"
+      "source": "/api/:path*",
+      "destination": "https://url-shortner-backend-qoag.onrender.com/api/:path*"
     },
     {
-      "source": "/auth(.*)",
+      "source": "/auth/:path*",
       "destination": "/index.html"
     },
     {
-      "source": "/dashboard(.*)",
+      "source": "/dashboard/:path*",
       "destination": "/index.html"
     },
     {
-      "source": "/((?!auth|dashboard|api).*)",
-      "destination": "https://url-shortner-backend-qoag.onrender.com/$1"
+      "source": "/:id",
+      "destination": "https://url-shortner-backend-qoag.onrender.com/:id"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
     }
   ]
 }
