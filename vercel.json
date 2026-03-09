@@ -1,5 +1,11 @@
 {
+  "cleanUrls": true,
+  "trailingSlash": false,
   "rewrites": [
+    {
+      "source": "/api/(.*)",
+      "destination": "https://url-shortner-backend-qoag.onrender.com/api/$1"
+    },
     {
       "source": "/auth(.*)",
       "destination": "/index.html"
@@ -9,12 +15,8 @@
       "destination": "/index.html"
     },
     {
-      "source": "/",
-      "destination": "/index.html"
-    },
-    {
-      "source": "/:id",
-      "destination": "https://url-shortner-backend-qoag.onrender.com/:id"
+      "source": "/((?!auth|dashboard|api).*)",
+      "destination": "https://url-shortner-backend-qoag.onrender.com/$1"
     }
   ]
 }
