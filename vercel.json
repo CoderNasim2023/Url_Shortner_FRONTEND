@@ -4,7 +4,7 @@
   "rewrites": [
     {
       "source": "/api/:path*",
-      "destination": "https://url-shortner-backend-qoag.onrender.com/api/:path*"
+      "destination": "https://url-shortner-backend-2l6c.onrender.com/api/:path*"
     },
     {
       "source": "/auth/:path*",
@@ -16,11 +16,10 @@
     },
     {
       "source": "/:id",
-      "destination": "https://url-shortner-backend-qoag.onrender.com/:id"
+      "destination": "https://url-shortner-backend-2l6c.onrender.com/:id"
     },
     {
       "source": "/(.*)",
       "destination": "/index.html"
     }
   ]
-}
