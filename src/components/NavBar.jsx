@@ -25,9 +25,8 @@ const Navbar = () => {
 
           {/* Left side - Project Title Name */}
           <div className="flex items-center">
-             <span className="text-sm font-medium">Home</span>
             <Link to="/" className="text-xl font-bold text-gray-800">
-              <img src={logo} alt="logo"  className="w-10 h-10" />
+              <img src={logo} alt="logo" placeholder=" Urlify|Home " className="w-10 h-10" />
             </Link>
           </div>
 
