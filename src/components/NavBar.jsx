@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { logout } from '../store/slice/authSlice';
 import { useNavigate } from '@tanstack/react-router';
 
-import logo from '../assets/logo.png';
+import logo from '../assets/logo2.png';
 
 const Navbar = () => {
   const dispatch = useDispatch();
