@@ -7,19 +7,22 @@
       "destination": "https://url-shortner-backend-2l6c.onrender.com/api/:path*"
     },
     {
-      "source": "/auth/:path*",
-      "destination": "/index.html"
-    },
-    {
-      "source": "/dashboard/:path*",
-      "destination": "/index.html"
-    },
-    {
-      "source": "/:id",
+      "source": "/:id([a-zA-Z0-9]{5,10})",
       "destination": "https://url-shortner-backend-2l6c.onrender.com/:id"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/auth(.*)",
+      "dest": "/index.html"
     },
     {
-      "source": "/(.*)",
-      "destination": "/index.html"
+      "src": "/dashboard(.*)",
+      "dest": "/index.html"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
     }
   ]
+}
