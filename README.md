@@ -1,6 +1,3 @@
-"═══════════════════════════════════════════════════════════════════
-  URL SHORTENER PROJECT - TECHNICAL DEEP DIVE
-═══════════════════════════════════════════════════════════════════
 
 Project: MERN Stack URL Shortener (urlify.co.in)
 Tech Stack: MongoDB, Express.js, React (Vite), Node.js
