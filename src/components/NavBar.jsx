@@ -8,7 +8,7 @@ import logo from '../assets/logo2.png';
 
 const Navbar = () => {
   const dispatch = useDispatch();
-  const navigate = useNavigate();
+  const navigate = useNavigate(); 
   const auth = useSelector((state) => state.auth);
   const isAuthenticated = auth?.isAuthenticated;
   const userName = auth?.user?.name;
@@ -26,7 +26,7 @@ const Navbar = () => {
           {/* Left side - Project Title Name */}
           <div className="flex items-center">
             <Link to="/" className="text-xl font-bold text-gray-800">
-              <img src={logo} alt="logo" title="Urlify|Home" className="w-27 h-10" />
+              <img src={logo} alt="logo" title="Urlify|Home" className="w-27 h-18" />
             </Link>
           </div>
 
