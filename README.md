@@ -1,4 +1,11 @@
-
+<p align="center">
+  <img 
+    width="617"
+    height="348"
+    alt="Urlify"
+    src="https://github.com/user-attachments/assets/eb9b0fed-b27b-4cc0-917e-138037ad7612"
+  />
+</p>
 Project: MERN Stack URL Shortener (urlify.co.in)
 Tech Stack: MongoDB, Express.js, React (Vite), Node.js
 Deployment: Frontend (Vercel), Backend (Render), Database (MongoDB Atlas)
